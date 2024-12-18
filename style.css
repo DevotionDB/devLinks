@@ -70,12 +70,17 @@ body *{
     top: 50%;
     left: 0;
     z-index: 1;
-    transform: translateY(-50%)
+    transform: translateY(-50%);
+    animation: revers-slide 0.2s;
 }
 
 .light #switch button{
-    right: 0;
-    left: initial;
+    animation: slide-task 0.2s forwards;
+}
+
+#switch button:hover{
+    outline: 8px solid var(--surface-color-hover);
+
 }
 
 #switch span{
@@ -144,7 +149,24 @@ footer{
     :root{
         --bg-url: url(./images/bg-desktop.jpg);
     }
-    :light{
+    .light{
         --bg-url: url(./images/bg-desktop-light.jpg);
+    }
+}
+
+@keyframes slide-task {
+    from{
+        left: 0;
+    }
+    to{
+        left: 50%;
+    }
+}
+@keyframes revers-slide {
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
     }
 }
